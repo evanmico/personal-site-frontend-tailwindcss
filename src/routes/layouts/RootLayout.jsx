@@ -6,21 +6,21 @@ function MainDesktopNavigation() {
     return (
         <>
             <nav
-                className="hidden md:flex space-x-8 text-xl font-medium"
+                className="hidden md:grid md:grid-cols-3 text-xl font-medium"
                 aria-label="main"
             >
                 <NavLink to='/' end
-                    className="hover:opacity-90 border-l-4 border-accent-dark pl-2"
+                    className="hover:bg-bg-primary/50 hover:duration-300 border-l-4 border-accent-dark pl-2"
                 >
                     Index
                 </NavLink>
                 <NavLink to='/about' end
-                    className="hover:opacity-90 border-l-4 border-accent-dark pl-2"
+                    className="hover:bg-bg-primary/50 hover:duration-300 border-l-4 border-accent-dark pl-2"
                 >
                     About
                 </NavLink>
                 <NavLink to='/projects' end
-                    className="hover:opacity-90 border-l-4 border-accent-dark pl-2"
+                    className="hover:bg-bg-primary/50 hover:duration-300 border-l-4 border-accent-dark pl-2"
                 >
                     Projects
                 </NavLink>
@@ -30,7 +30,7 @@ function MainDesktopNavigation() {
 }
 
 function RootLayout() {
-    root.className += "min-h-screen flex flex-col";
+    root.className += "min-h-screen grid grid-col-1 grid-rows-[min-content_1fr_min-content] justify-stretch";
     return (
         <>
             <header className="bg-bg-secondary text-txt-lg sticky top-0 z-10 drop-shadow-lg">
@@ -45,7 +45,7 @@ function RootLayout() {
                             alt="logo"
                             title="logo"
                         />
-                        <h1 className="text-3xl font-medium">RosyDev LLC</h1>
+                        <h1 className="text-3xl font-medium">evanmico.dev</h1>
                     </a>
                     <div className="min-w-fit">
                         <button
@@ -58,10 +58,10 @@ function RootLayout() {
                     </div>
                 </section>
             </header>
-            <main className="mx-auto grid place-items-center flex-grow">
+            <main className="bg-bg-primary flex flex-col justify-center items-center gap-y-2">
                 <Outlet />
             </main>
-            <footer className="to-bg-secondary bg-gradient-to-b from-transparent text-txt-lg sticky sm:static bottom-0 z-10 shadow-lg hover:duration-500 transition duration-200 hover:bg-bg-secondary">
+            <footer className="to-bg-secondary bg-gradient-to-b from-bg-primary text-txt-lg sticky sm:static bottom-0 z-10 shadow-lg hover:duration-500 transition duration-200 hover:bg-bg-secondary">
                 <section className="max-w-5xl mx-auto p-4 flex justify-center lg:justify-between items-center">
                     <a
                         href="#hero"
@@ -73,7 +73,7 @@ function RootLayout() {
                             alt="logo"
                             title="logo"
                         />
-                        <h1 className="text-xl font-medium">Our Socials:</h1>
+                        <h1 className="text-xl font-medium">My Socials:</h1>
                     </a>
                     <div className="min-w-full sm:min-w-max">
                         <button

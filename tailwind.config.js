@@ -13,7 +13,7 @@ export default {
         'accent-bright': 'hsl(var(--accent-bright) / <alpha-value>)',
         'bg-primary': 'hsl(var(--bg-primary) / <alpha-value>)',
         'bg-secondary': 'hsl(var(--bg-secondary) / <alpha-value>)',
-      }
+      },
     },
   },
   plugins: [],
