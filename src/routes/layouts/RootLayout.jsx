@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 import { root } from "../../main.jsx";
 import { NavLink } from "react-router";
+//import { redirect } from "react-router";
 
 function MainDesktopNavigation() {
     return (
@@ -29,8 +30,68 @@ function MainDesktopNavigation() {
     );
 }
 
+function Social({link,img,linkText}) {
+    return(
+        <a
+            href={link}
+            className="hover:opacity-90 border-l-4 border-accent-dark pl-2 flex space-x-2 place-items-center"
+        >
+            <img
+                className="w-full max-w-6"
+                src={img.src}
+                alt={img.alt}
+                title={img.title}
+            />
+            <p>{linkText}</p>
+        </a>
+    )
+}
+
+function SocialsNavigation({socials}) {
+    const socialsList = socials.map(({link,img,linkText},idx) => (<Social key={idx} link={link} img={img} linkText={linkText}/>));
+    return(
+        <>
+            <nav
+                className="hidden sm:flex space-x-8 text-xl font-medium"
+                aria-label="socials"
+            >
+                {socialsList}
+            </nav>
+        </>
+    )
+}
+
 function RootLayout() {
     root.className += "min-h-screen grid grid-col-1 grid-rows-[min-content_1fr_min-content] justify-stretch";
+    const socials = [
+        {
+            "link":"https://github.com/evanmico",
+            "img":{
+                "src":"/assets/github-mark/github-mark-white.svg",
+                "alt":"github",
+                "title":"github"
+            },
+            "linkText":"github"
+        },
+        {
+            "link":"https://x.com/IRosyaykin",
+            "img":{
+                "src":"/assets/x-logo/logo.svg",
+                "alt":"X",
+                "title":"x.com"
+            },
+            "linkText":"@evanmico"
+        },
+        {
+            "link":"www.linkedin.com/in/evanmico",
+            "img":{
+                "src":"/assets/LinkedIn-Logos/In-White-128@2x.png",
+                "alt":"linkedIn",
+                "title":"linkedIn"
+            },
+            "linkText":"linkedIn"
+        }
+    ];
     return (
         <>
             <header className="bg-bg-secondary text-txt-lg sticky top-0 z-10 drop-shadow-lg">
@@ -83,47 +144,7 @@ function RootLayout() {
                             <p>⮝</p>
                             <p>⮝</p>
                         </button>
-                        <nav
-                            className="hidden sm:flex space-x-8 text-xl font-medium"
-                            aria-label="socials"
-                        >
-                            <a
-                                href="https://www.instagram.com/"
-                                className="hover:opacity-90 border-l-4 border-accent-dark pl-2 flex space-x-2 place-items-center"
-                            >
-                                <img
-                                    className="min-w-6"
-                                    src="#"
-                                    alt="logo"
-                                    title="logo"
-                                />
-                                <p>Instagram</p>
-                            </a>
-                            <a
-                                href="https://www.instagram.com/"
-                                className="hover:opacity-90 border-l-4 border-accent-dark pl-2 flex space-x-2 place-items-center"
-                            >
-                                <img
-                                    className="min-w-6"
-                                    src="#"
-                                    alt="logo"
-                                    title="logo"
-                                />
-                                <p>Instagram</p>
-                            </a>
-                            <a
-                                href="https://www.instagram.com/"
-                                className="hover:opacity-90 border-l-4 border-accent-dark pl-2 flex space-x-2 place-items-center"
-                            >
-                                <img
-                                    className="min-w-6"
-                                    src="#"
-                                    alt="logo"
-                                    title="logo"
-                                />
-                                <p>Instagram</p>
-                            </a>
-                        </nav>
+                        <SocialsNavigation socials={socials}/>
                     </div>
                 </section>
             </footer>

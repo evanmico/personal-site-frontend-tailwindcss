@@ -11,8 +11,8 @@ function Button({text, nav}){
 }
 function InfoSection({headingText, bodyText, extra}){
     return (
-        <section className="shadow-xl flex flex-col p-4 space-y-5 max-w-5xl w-full items-center border-bg-secondary border-solid border-2 rounded-xl bg-bg-secondary/50 text-center">
-            <section className="space-y-0">
+        <section className="shadow-2xl flex flex-col p-4 space-y-5 max-w-5xl w-full items-center border-bg-secondary border-solid border-2 rounded-xl bg-bg-secondary/50 text-center">
+            <section className="space-y-3">
             <h2 className="text-txt-lg text-5xl font-bold">{headingText}</h2>
             <p className="text-txt-sm text-2xl">
                 {bodyText}
