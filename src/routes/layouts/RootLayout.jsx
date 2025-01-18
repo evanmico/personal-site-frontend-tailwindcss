@@ -7,7 +7,7 @@ function MainDesktopNavigation() {
     return (
         <>
             <nav
-                className="hidden md:grid md:grid-cols-3 text-xl font-medium"
+                className="hidden md:grid md:grid-cols-4 text-xl font-medium"
                 aria-label="main"
             >
                 <NavLink to='/' end
@@ -19,6 +19,11 @@ function MainDesktopNavigation() {
                     className="hover:bg-bg-primary/50 hover:duration-300 border-l-4 border-accent-dark pl-2"
                 >
                     About
+                </NavLink>
+                <NavLink to='/PastWork' end
+                    className="hover:bg-bg-primary/50 hover:duration-300 border-l-4 border-accent-dark pl-2"
+                >
+                    Work
                 </NavLink>
                 <NavLink to='/projects' end
                     className="hover:bg-bg-primary/50 hover:duration-300 border-l-4 border-accent-dark pl-2"

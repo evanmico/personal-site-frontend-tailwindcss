@@ -1,4 +1,4 @@
-import {projects} from '../data/projects.js';
+import { pastWork } from "../data/pastWork";
 
 function InfoSection({headingText, bodyText, extra}){
     return (
@@ -34,7 +34,7 @@ function Project({title,date,description}) {
 }
 
 function ProjectList({projects}) {
-    const projectSet = projects.map(({id,title,date,description, link})=>(<Project key={id} title={title} date={date} description={description} link={link}/>));
+    const projectSet = projects.map(({id,title,date,description, link},idx)=>(<Project key={id} title={title} date={date} description={description} link={link}/>));
     return (
         <section className="space-y-6">
             {projectSet}
@@ -42,12 +42,8 @@ function ProjectList({projects}) {
     )
 }
 
-function Projects() {
-    return(
-        <>
-            <InfoSection headingText={"My Projects"} extra={<ProjectList projects={projects}/>}/>
-        </>
-    )
+function PastWork() {
+
 }
 
-export default Projects
+export default PastWork;

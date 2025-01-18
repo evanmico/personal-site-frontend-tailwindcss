@@ -30,7 +30,8 @@ function CallToAction({headingText, buttons}){
     return(
         <section className="shadow-lg flex flex-col space-y-4 p-4 max-w-2xl w-full border-accent-dark border-solid border-2 rounded-xl bg-accent-dark/25 text-center">
             <h3 className="text-txt-lg text-4xl font-bold">{headingText}</h3>
-            <div className={`grid grid-cols-${buttonSet.length} gap-2 text-txt-sm text-xl justify-items-stretch`}>
+            {/*Possible column styles: grid-cols-1 grid-cols-2 */}
+            <div className={`grid grid-cols-${(buttonSet.length-1)%2+1} gap-2 text-txt-sm text-xl justify-items-stretch`}>
                 {buttonSet}
             </div>
         </section>
