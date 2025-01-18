@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { infoSections, buttonSections } from "../data/infoSections.js";
 
 function Button({text, nav}){
     return (
@@ -12,7 +13,7 @@ function Button({text, nav}){
 
 function InfoSection({headingText, bodyText, extra}){
     return (
-        <section className="shadow-2xl flex flex-col p-4 space-y-5 max-w-5xl w-full items-center border-bg-secondary border-solid border-2 rounded-xl bg-bg-secondary/50 text-center">
+        <section className="shadow-2    xl flex flex-col p-4 space-y-5 max-w-5xl w-full items-center border-bg-secondary border-solid border-2 rounded-xl bg-bg-secondary/50 text-center">
             <section className="space-y-3">
             <h2 className="text-txt-lg text-5xl font-bold">{headingText}</h2>
             <p className="text-txt-sm text-2xl">
@@ -37,12 +38,11 @@ function CallToAction({headingText, buttons}){
 }
 
 function About() {
-    const headingText = "Hello, I am evanmico";
-    const bodyText = "A full stack web developer with a specialization in mysql, nodejs, expressjs, and react. I am also well-versed in Azure. I also run a business called RosyDev LLC where I create and maintain sites for clients."
-    const buttons = [{text:"My Projects", nav:"projects"}];
+    const callToActionList = buttonSections.map(({id,headingText,buttons})=> (<CallToAction key={id} headingText={headingText} buttons={buttons} />))
+    const sectionSet = infoSections.map(({id, headingText, bodyText, buttons}) => (<InfoSection key={id} headingText={headingText} bodyText={bodyText} extra={buttons&&(callToActionList.find(({key}) => key===id))}/>));
     return(
         <>
-            <InfoSection headingText={headingText} bodyText={bodyText} extra={<CallToAction headingText={"Feel free to peruse my projects!"} buttons={buttons}/>}/>
+            {sectionSet}
         </>
     )
 }
