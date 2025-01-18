@@ -124,7 +124,7 @@ function RootLayout() {
                     </div>
                 </section>
             </header>
-            <main className="bg-bg-primary bg-[url('/assets/1920x1200.svg')] bg-auto bg-fixed flex flex-col justify-center items-center gap-y-2 py-8">
+            <main className="bg-bg-primary bg-[url('/assets/3840x2160.svg')] bg-contain bg-fixed flex flex-col justify-center items-center gap-y-2 py-8">
                 <Outlet />
             </main>
             <footer className="to-bg-secondary bg-gradient-to-b from-bg-primary text-txt-lg sticky sm:static bottom-0 z-10 shadow-lg hover:duration-500 transition duration-200 hover:bg-bg-secondary">

@@ -20,6 +20,7 @@ createRoot(root).render(
           <Route path='about' element={<About/>}/>
           <Route path='projects' element={<Projects/>}/>
           <Route path='pastWork' element={<PastWork/>}/>
+          <Route path='*' element={<Index/>}/>
         </Route>
       </Routes>
     </BrowserRouter>
